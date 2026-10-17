@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ahmad-zaven.io/sitemap.xml
+Sitemap: https://portfolio.ahmad-zaven.io/sitemap.xml

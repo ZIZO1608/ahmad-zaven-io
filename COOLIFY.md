@@ -1,9 +1,9 @@
-# Putting ahmad-zaven.io live with Coolify
+# Putting portfolio.ahmad-zaven.io live with Coolify
 
 How it works: your code goes to GitHub. Coolify (on your VPS) pulls it, builds the `Dockerfile` into a small Nginx container, and puts it behind its proxy with free HTTPS. After that, every `git push` updates the live site.
 
 ```
-Your PC ──git push──▶ GitHub ──webhook──▶ Coolify on VPS ──▶ https://ahmad-zaven.io
+Your PC ──git push──▶ GitHub ──webhook──▶ Coolify on VPS ──▶ https://portfolio.ahmad-zaven.io
 ```
 
 You need: a VPS (Ubuntu 22.04 or 24.04, at least 2 GB RAM, 2 CPU, 30 GB disk), the domain, and a GitHub account.
@@ -28,13 +28,12 @@ const CONTACT = { whatsapp:"9639XXXXXXXX", email:"you@example.com", instagram:"u
 
 1. Get your VPS **IPv4 address** from your hosting panel (e.g. `203.0.113.10`).
 2. Log in where you bought **ahmad-zaven.io** and open **DNS / DNS Records / Manage DNS**.
-3. **Delete** any existing `A`, `AAAA` or `CNAME` records on `@` and `www` (parking pages, "website builder" records). **Don't touch `MX` or `TXT` records** if you have email set up.
+3. If a record named `portfolio` already exists, delete it. **Leave everything else alone** (`@`, `www`, `MX`, `TXT`): the main domain can keep pointing wherever it points now.
 4. Add these records:
 
 | Type | Name / Host | Value / Points to | TTL |
 |------|-------------|-------------------|-----|
-| A | `@` | your VPS IP | 300 (or Auto) |
-| A | `www` | your VPS IP | 300 (or Auto) |
+| A | `portfolio` | your VPS IP | 300 (or Auto) |
 | A | `coolify` | your VPS IP | 300 (or Auto) |
 
 `coolify.ahmad-zaven.io` will be the address of your Coolify dashboard (optional, but nicer and safer than `IP:8000`).
@@ -44,11 +43,10 @@ const CONTACT = { whatsapp:"9639XXXXXXXX", email:"you@example.com", instagram:"u
 5. Check it worked (in PowerShell on your PC):
 
 ```powershell
-nslookup ahmad-zaven.io 1.1.1.1
-nslookup www.ahmad-zaven.io 1.1.1.1
+nslookup portfolio.ahmad-zaven.io 1.1.1.1
 ```
 
-Both must show your VPS IP. This usually takes 5–30 minutes, occasionally a few hours. You can do steps 2–4 while waiting.
+It must show your VPS IP. This usually takes 5–30 minutes, occasionally a few hours. You can do steps 2–4 while waiting.
 
 ---
 
@@ -108,10 +106,10 @@ sudo ufw delete allow 8000/tcp
 
 ---
 
-## Step 4. Put the project on GitHub
+## Step 4. Put the project on GitHub (already done: github.com/ZIZO1608/ahmad-zaven-io)
 
 1. On https://github.com → **New repository**
-   - Name: `ahmad-zaven-portfolio`
+   - Name: `ahmad-zaven-io`
    - **Private**
    - Do **not** tick "Add a README" (the repo must be empty)
    - **Create repository**
@@ -123,7 +121,7 @@ git init
 git add .
 git commit -m "Portfolio site"
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/ahmad-zaven-portfolio.git
+git remote add origin https://github.com/ZIZO1608/ahmad-zaven-io.git
 git push -u origin main
 ```
 
@@ -137,7 +135,7 @@ If Git asks you to log in, a browser window opens. Sign in to GitHub there.
 
 1. Coolify → **Sources** → **+ Add** → **GitHub App**.
 2. Give it a name (e.g. `my-github`) → **Continue** → **Register Now**. GitHub opens.
-3. On GitHub, approve creating the app, then **Install** it. Choose **Only select repositories** → pick `ahmad-zaven-portfolio` → **Install**.
+3. On GitHub, approve creating the app, then **Install** it. Choose **Only select repositories** → pick `ahmad-zaven-io` → **Install**.
 4. You land back in Coolify; the source now shows as connected.
 
 ---
@@ -146,19 +144,18 @@ If Git asks you to log in, a browser window opens. Sign in to GitHub there.
 
 1. **Projects** → **+ Add** → name it `Portfolio` → open it → open the **production** environment.
 2. **+ New** (New Resource) → **Private Repository (with GitHub App)**.
-3. Pick your GitHub App → pick the repo `ahmad-zaven-portfolio` → branch `main`.
+3. Pick your GitHub App → pick the repo `ahmad-zaven-io` → branch `main`.
 4. **Build Pack: `Dockerfile`** (important: not Nixpacks, not Static).
    - Base Directory: `/`
    - Dockerfile location: `/Dockerfile`
    - **Continue**
 5. On the app's **General / Configuration** page set:
-   - **Domains:** `https://ahmad-zaven.io,https://www.ahmad-zaven.io`
-     (comma, no spaces, both with `https://`. The `https://` is what makes Coolify get the SSL certificate.)
+   - **Domains:** `https://portfolio.ahmad-zaven.io`
+     (with `https://`: that is what makes Coolify get the SSL certificate)
    - **Ports Exposes:** `80`
-   - If you see a **Direction** / **Redirect** option, choose **Redirect to non-www** so `www.ahmad-zaven.io` forwards to `ahmad-zaven.io`.
    - **Save**
 6. Click **Deploy** (top right). Open **Logs / Deployments** to watch it. The first build takes about 1 minute. It's done when it shows **Finished / Running (healthy)**.
-7. Open **https://ahmad-zaven.io**. You should see the site with a padlock.
+7. Open **https://portfolio.ahmad-zaven.io**. You should see the site with a padlock.
 
 > If the padlock is missing or you get a certificate warning, DNS probably wasn't pointing at the server yet when it deployed. Wait until `nslookup` shows your IP (Step 1), then click **Redeploy** (or **Restart**). Coolify will request the certificate again.
 
@@ -166,14 +163,13 @@ If Git asks you to log in, a browser window opens. Sign in to GitHub there.
 
 ## Step 7. Check everything
 
-- [ ] `https://ahmad-zaven.io` loads with the padlock.
-- [ ] `https://www.ahmad-zaven.io` loads (or redirects to the non-www address).
-- [ ] `http://ahmad-zaven.io` redirects to `https://`.
+- [ ] `https://portfolio.ahmad-zaven.io` loads with the padlock.
+- [ ] `http://portfolio.ahmad-zaven.io` redirects to `https://`.
 - [ ] Switch the language to Arabic and open a few projects.
 - [ ] Contact buttons open WhatsApp, Telegram, Instagram and email correctly.
-- [ ] `https://ahmad-zaven.io/nothing-here` shows the 404 page.
+- [ ] `https://portfolio.ahmad-zaven.io/nothing-here` shows the 404 page.
 - [ ] Paste the link into a WhatsApp chat with yourself: the preview image should appear. (Or test on https://www.opengraph.xyz)
-- [ ] From Git Bash on your PC: `bash deploy/health_check.sh ahmad-zaven.io`
+- [ ] From Git Bash on your PC: `bash deploy/health_check.sh portfolio.ahmad-zaven.io`
 
 ---
 
@@ -196,7 +192,7 @@ Coolify sees the push and redeploys automatically (about 1 minute). If it doesn'
 
 ## After launch
 
-- **Google:** add the site in https://search.google.com/search-console (choose "Domain", verify with the TXT record it gives you in your DNS) and submit `https://ahmad-zaven.io/sitemap.xml`.
+- **Google:** add the site in https://search.google.com/search-console (choose "Domain", verify with the TXT record it gives you in your DNS) and submit `https://portfolio.ahmad-zaven.io/sitemap.xml`.
 - **Email @ahmad-zaven.io:** Coolify doesn't handle email. Free options are **Zoho Mail** (real mailbox) or **Cloudflare Email Routing** (forwards to your Gmail). They give you `MX` and `TXT` records to add in DNS. Don't delete the A records from Step 1.
 - **Coolify updates:** Coolify shows a notice in the dashboard when an update is out. Update from there.
 - **Server backups:** turn on your VPS provider's snapshots/backups. The website itself is safe on GitHub anyway.
@@ -208,6 +204,6 @@ Coolify sees the push and redeploys automatically (about 1 minute). If it doesn'
 | Can't open `IP:8000` | Port 8000 is closed in the provider's firewall or ufw (Step 2.4). |
 | Build fails "Dockerfile not found" | Build Pack must be **Dockerfile**, Base Directory `/`. |
 | "Bad Gateway" / 502 | **Ports Exposes** must be `80`. Save, then Redeploy. |
-| "No available server" / 404 from Traefik | The domain in **Domains** doesn't exactly match what you typed in the browser. Check spelling, `https://`, and include `www`. |
+| "No available server" / 404 from Traefik | The domain in **Domains** doesn't exactly match what you typed in the browser. Check spelling, `https://`, and that it is `portfolio.ahmad-zaven.io`. |
 | Certificate warning | DNS not pointing at the server yet. Fix DNS, wait, then Redeploy. On Cloudflare use grey cloud or SSL mode Full (strict). |
 | Site shows old version | Hard refresh (Ctrl+F5). Check the latest deployment finished in Coolify. |
