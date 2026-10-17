@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Zaven Jooharian & Ahmad Sabagh: CRMs, ERPs, point-of-sale, mobile apps and websites from Aleppo, Syria.">
+<link rel="canonical" href="https://ahmad-zaven.io/">
+<meta name="theme-color" content="#F2F3EF">
+<meta property="og:site_name" content="Zaven & Ahmad Builds">
+<meta property="og:title" content="Zaven & Ahmad Builds">
+<meta property="og:description" content="18 systems, apps and websites, in Arabic and English.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahmad-zaven.io/">
+<meta property="og:image" content="https://ahmad-zaven.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zaven & Ahmad Builds: CRMs, ERPs, apps and websites">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SY">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Zaven &amp; Ahmad Builds</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Zaven & Ahmad Builds","url":"https://ahmad-zaven.io/","logo":"https://ahmad-zaven.io/apple-touch-icon.png","description":"CRMs, ERPs, point-of-sale, mobile apps and websites from Aleppo, Syria.","address":{"@type":"PostalAddress","addressLocality":"Aleppo","addressCountry":"SY"},"founder":[{"@type":"Person","name":"Zaven Jooharian"},{"@type":"Person","name":"Ahmad Sabagh"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Alexandria:wght@500;700;800&family=Readex+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a build index. Statement hero with a small screenshot collage, category counters that double as filters, then a two/three-column grid of build cards that open into a full case sheet. Single committed light look. */
+:root{
+  --bg:#F2F3EF;          /* cool paper, faint green bias toward the accent's complement */
+  --surface:#FFFFFF;
+  --ink:#121417;
+  --muted:#5B616A;
+  --line:#DFE2DC;
+  --accent:#2443F0;      /* cobalt */
+  --accent-soft:#E4E8FE;
+  --star:#F2B90F;
+  --display:"Bricolage Grotesque","Alexandria",ui-sans-serif,system-ui,sans-serif;
+  --body:"Readex Pro",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r:18px;
+  color-scheme:light;
+}
+html[lang="ar"]{--display:"Alexandria","Readex Pro",ui-sans-serif,system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+html[lang="ar"] .mono{font-family:var(--body);letter-spacing:0;text-transform:none;font-size:.82rem;font-weight:500}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;padding-block:14px}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.02rem}
+.mark{width:36px;height:36px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.86rem;letter-spacing:-.02em}
+.top nav{margin-inline-start:auto;display:flex;align-items:center;gap:6px}
+.top nav a{white-space:nowrap;text-decoration:none;padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:500;font-size:.94rem}
+.top nav a:hover{color:var(--ink);background:var(--surface)}
+.top nav a.navcta{background:var(--ink);color:var(--bg);margin-inline-end:4px}
+.top nav a.navcta:hover{background:var(--accent);color:#fff}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{border:0;background:transparent;padding:6px 12px;border-radius:999px;cursor:pointer;font-weight:600;font-size:.84rem;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.eyebrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:#1DB954;box-shadow:0 0 0 4px #1db95422}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance}
+html[lang="ar"] h1{letter-spacing:0;line-height:1.25;font-size:clamp(2.2rem,4.8vw,3.9rem)}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.14rem;color:var(--muted);max-width:56ch;margin:0 0 28px}
+.builders{display:flex;flex-wrap:wrap;gap:12px}
+.builder{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 16px 10px 10px}
+html[dir="rtl"] .builder{padding:10px 10px 10px 16px}
+.av{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.9rem;color:#fff;flex:none}
+.av.z{background:var(--accent)}.av.a{background:#121417}
+.builder b{display:block;font-weight:600;font-size:.98rem;line-height:1.25}
+.builder span{font-size:.84rem;color:var(--muted);line-height:1.3;display:block}
+.collage{position:relative;aspect-ratio:1/0.82;max-width:100%}
+.collage .s{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -24px #12141740,0 2px 6px #12141714;background:#111}
+.collage .s img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.collage .s1{inset:6% 14% 22% 0;transform:rotate(-2deg)}
+.collage .s2{width:30%;aspect-ratio:9/16;right:2%;top:0;border-radius:20px;transform:rotate(3deg)}
+.collage .s3{width:27%;aspect-ratio:9/16;right:24%;bottom:0;border-radius:20px;transform:rotate(-3deg)}
+html[dir="rtl"] .collage{transform:scaleX(-1)} html[dir="rtl"] .collage .s img{transform:scaleX(-1)}
+.collage .tag{position:absolute;left:4%;bottom:6%;background:var(--surface);border-radius:12px;padding:10px 14px;box-shadow:0 12px 30px -12px #12141740;font-weight:600;font-size:.88rem;display:flex;gap:8px;align-items:center}
+html[dir="rtl"] .collage .tag{transform:scaleX(-1)}
+
+/* counters / filters */
+.filters{padding-block:12px 28px}
+.filters .row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.fbtn{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:2px;transition:border-color .15s,transform .15s,background .15s}
+.fbtn:hover{border-color:#b9bfb6;transform:translateY(-1px)}
+.fbtn:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.fbtn .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2.1rem;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.fbtn .l{color:var(--muted);font-weight:500;font-size:.92rem}
+.fbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.fbtn[aria-pressed="true"] .l{color:#c9ccd2}
+
+/* grid */
+.work{padding-block:8px 72px}
+.sechead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 0 18px;flex-wrap:wrap}
+.sechead h2{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;letter-spacing:-.02em;margin:0}
+html[lang="ar"] .sechead h2{letter-spacing:0}
+.sechead p{margin:0;color:var(--muted);font-size:.94rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 22px 44px -26px #12141755;border-color:#cdd1ca}
+.card:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px}
+.card[hidden]{display:none!important}
+.cover{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--tint,#e9ebe6);isolation:isolate}
+.cover .shot{position:absolute;left:9%;right:9%;top:11%;bottom:-3%;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 18px 40px -18px #12141766,0 0 0 1px #12141712;background:#111;transition:transform .35s ease}
+.cover .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card:hover .cover .shot{transform:translateY(-5px)}
+.cover .phone{position:absolute;bottom:-4%;width:25%;aspect-ratio:9/17.5;border-radius:14px;overflow:hidden;box-shadow:0 18px 36px -14px #12141780,0 0 0 1px #12141718;background:#111;transition:transform .35s ease}
+.cover .phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cover.mixed .shot{right:22%}
+.cover.mixed .phone{right:7%;bottom:-6%;width:27%}
+html[dir="rtl"] .cover.mixed .shot{right:9%;left:22%}
+html[dir="rtl"] .cover.mixed .phone{right:auto;left:7%}
+.cover.phones{display:flex;justify-content:center;align-items:flex-end;gap:4%}
+.cover.phones .phone{position:relative;bottom:auto;margin-bottom:-6%;width:26%}
+.cover.phones .phone:nth-child(2){margin-bottom:-1%}
+.cover.tall .phone{width:29%;border-radius:10px}
+.card:hover .cover.phones .phone:nth-child(2){transform:translateY(-6px)}
+.cover .soon{position:absolute;top:12px;inset-inline-end:12px;z-index:3;background:#ffffffd9;backdrop-filter:blur(6px);border-radius:999px;padding:4px 10px;font-size:.72rem;font-weight:600;color:#3b4048}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.meta{display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.cat{color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:600;padding:3px 10px;border-radius:999px;background:#EEF0EC;color:#3b4048;white-space:nowrap}
+.pill i{width:7px;height:7px;border-radius:50%;background:#8a9099}
+.pill.live{background:#E2F6E8;color:#11643a}.pill.live i{background:#1DB954}
+.pill.store{background:#EDE6FE;color:#4b2aa8}.pill.store i{background:#7A4BFF}
+.pill.dev{background:#FFF2CF;color:#7a5600}.pill.dev i{background:#F2B90F}
+.pill.use{background:var(--accent-soft);color:#1b31b8}.pill.use i{background:var(--accent)}
+.card h3{font-family:var(--display);font-weight:700;font-size:1.32rem;letter-spacing:-.02em;margin:2px 0 0;line-height:1.2;text-wrap:balance}
+html[lang="ar"] .card h3{letter-spacing:0;font-size:1.22rem}
+.card p.line{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+.foot{margin-top:auto;padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px dashed var(--line)}
+.client{font-size:.86rem;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.by{display:flex;flex:none}
+.by .av{width:28px;height:28px;border-radius:8px;font-size:.68rem;border:2px solid var(--surface)}
+.by .av+.av{margin-inline-start:-6px}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+
+/* art covers */
+.art{position:absolute;inset:0;display:grid;place-items:center}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;width:44%;aspect-ratio:1}
+.pg span{border-radius:9px;background:#2B2342;transition:background .25s,box-shadow .25s,transform .25s}
+.pg span.on{background:#C8FF3D;box-shadow:0 0 22px #C8FF3D88}
+.pg span.pu{background:#8B3DFF;box-shadow:0 0 24px #8B3DFFaa;transform:scale(.94)}
+.pg-cap{position:absolute;bottom:9%;color:#cfc6ef;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em}
+.sw{position:relative;width:40%;aspect-ratio:3/4}
+.sw .c{position:absolute;inset:0;border-radius:16px;box-shadow:0 16px 30px -14px #12141766;transition:transform .55s cubic-bezier(.3,.7,.2,1),opacity .55s}
+.sw .c.b2{transform:translateY(14px) scale(.9);opacity:.7}
+.sw .c.b1{transform:translateY(7px) scale(.95);opacity:.88}
+.sw .c.go-r{transform:translateX(120%) rotate(16deg);opacity:0}
+.sw .c.go-l{transform:translateX(-120%) rotate(-16deg);opacity:0}
+.sw .stamp{position:absolute;top:12%;padding:3px 10px;border:2.5px solid;border-radius:8px;font-weight:800;font-size:.8rem;letter-spacing:.06em;opacity:0;transition:opacity .2s;background:#ffffffcc}
+.sw .stamp.t{right:8%;color:#E5383B;transform:rotate(10deg)}
+.sw .stamp.k{left:8%;color:#1A9E55;transform:rotate(-10deg)}
+.sw .c.go-r .stamp.t,.sw .c.go-l .stamp.k{opacity:1}
+.ph1{background:linear-gradient(160deg,#FFB86B,#F25F5C 55%,#6A4C93)}
+.ph2{background:linear-gradient(200deg,#7FD1B9,#3D8BFF 60%,#1F2A6B)}
+.ph3{background:linear-gradient(140deg,#F7E07A,#8CC152 60%,#2E7D32)}
+.ph4{background:linear-gradient(180deg,#B9C2FF,#7A4BFF)}
+.fl{background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:14px;text-align:center}
+.fl .ic{width:42%;aspect-ratio:4/5;border-radius:8px;position:relative;background:var(--fc,#3D8BFF)}
+.fl .ic::after{content:"";position:absolute;top:0;right:0;width:32%;aspect-ratio:1;background:#ffffff66;border-bottom-left-radius:8px}
+.fl b{font-size:.74rem;line-height:1.2;word-break:break-all;color:#121417}
+.fl small{font-size:.68rem;color:#5B616A;font-family:var(--mono)}
+.fx{width:78%;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 18px 40px -20px #12141766;display:flex;flex-direction:column;gap:6px}
+.fx .pair{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.72rem;color:#5B616A;letter-spacing:.08em}
+.fx .val{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2.2rem;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.05;color:#121417;direction:ltr;text-align:start}
+.fx .chg{font-size:.78rem;font-weight:600;font-variant-numeric:tabular-nums;direction:ltr}
+.fx .chg.up{color:#11643a}.fx .chg.dn{color:#b3261e}
+.fx svg{width:100%;height:46px;display:block}
+.fx .note{font-size:.68rem;color:#8a9099}
+.live-dot{display:inline-flex;align-items:center;gap:6px}
+.live-dot::before{content:"";width:7px;height:7px;border-radius:50%;background:#1DB954;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #1db95466}100%{box-shadow:0 0 0 8px #1db95400}}
+.hub svg{width:86%;height:86%}
+.hub .flow{stroke-dasharray:4 7;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-22}}
+.doc{display:flex;align-items:center;gap:6%;width:84%}
+.doc .pg2{flex:1;aspect-ratio:3/4;background:#fff;border-radius:8px;box-shadow:0 14px 30px -16px #12141780;padding:9% 8%;display:flex;flex-direction:column;gap:7%;position:relative}
+.doc .pg2 i{display:block;height:5%;border-radius:3px;background:#DCE1E8}
+.doc .pg2 i:nth-child(3n){width:70%}
+.doc .pg2.pdf .hd{height:12%;border-radius:4px;background:#1E5AA8}
+.doc .pg2 .ft{position:absolute;bottom:6%;inset-inline-start:8%;font-family:var(--mono);font-size:.6rem;color:#5B616A}
+.doc .arr{font-size:1.6rem;color:#1E5AA8;font-weight:700}
+html[dir="rtl"] .doc .arr{transform:scaleX(-1)}
+
+/* about strip */
+.how{padding-block:8px 72px}
+.how .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.how .it{padding-top:16px;border-top:2px solid var(--ink)}
+.how h3{font-family:var(--display);font-size:1.18rem;margin:0 0 6px;font-weight:700}
+.how p{margin:0;color:var(--muted);font-size:.96rem}
+/* contact */
+.contact{padding-block:0 72px}
+.contact .box{background:var(--ink);color:#fff;border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end}
+.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.035em;margin:0 0 14px;text-wrap:balance}
+html[lang="ar"] .contact h2{letter-spacing:0;line-height:1.3}
+.contact h2 em{font-style:normal;color:#8EA0FF}
+.contact p{margin:0;color:#B9BEC6;font-size:1.05rem;max-width:44ch}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.way{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;background:#ffffff10;border:1px solid #ffffff1f;border-radius:16px;padding:14px 16px;transition:background-color .15s,border-color .15s,transform .15s}
+.way:hover{background:#ffffff1c;border-color:#ffffff40}
+.way:active{transform:scale(.97)}
+.way.primary{grid-column:1/-1;background:#1DB954;border-color:#1DB954;color:#0B2414}
+.way.primary:hover{background:#22c95d}
+.way svg{width:22px;height:22px;flex:none}
+.way b{display:block;font-weight:600;font-size:.98rem;line-height:1.2}
+.way small{display:block;font-size:.8rem;opacity:.72;direction:ltr;text-align:start;unicode-bidi:plaintext}
+.ask{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#1DB954;color:#0B2414;text-decoration:none;font-weight:600;padding:11px 16px;border-radius:12px;margin-top:10px}
+.ask:hover{background:#22c95d}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer b{color:var(--ink)}
+
+/* dialog */
+dialog{border:0;padding:0;margin:auto;width:min(1120px,calc(100vw - 32px));max-height:calc(100dvh - 40px);border-radius:22px;background:var(--surface);color:var(--ink);box-shadow:0 40px 100px -30px #12141799;overflow:hidden}
+dialog::backdrop{background:#12141780;backdrop-filter:blur(4px)}
+dialog[open]{display:flex;flex-direction:column;animation:pop .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.dl-scroll{overflow:auto;overscroll-behavior:contain}
+.dl-close{position:absolute;top:14px;inset-inline-end:14px;z-index:5;width:40px;height:40px;border-radius:12px;border:0;background:#ffffffe6;box-shadow:0 4px 14px #12141726;cursor:pointer;font-size:1.3rem;line-height:1;display:grid;place-items:center}
+.viewer{--vh:clamp(260px,56vh,620px);position:relative;background:var(--tint,#e9ebe6);height:var(--vh);display:grid;place-items:center;overflow:hidden}
+.viewer img{width:auto;height:auto;max-width:calc(100% - 120px);max-height:calc(var(--vh) - 48px);object-fit:contain;border-radius:10px;box-shadow:0 24px 50px -20px #12141780;background:#111}
+.viewer .art{position:absolute;inset:0}
+.viewer .navb{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#ffffffe6;box-shadow:0 4px 14px #12141726;cursor:pointer;font-size:1.2rem;display:grid;place-items:center}
+.viewer .prev{inset-inline-start:14px}.viewer .next{inset-inline-end:14px}
+html[dir="rtl"] .viewer .navb span{display:inline-block;transform:scaleX(-1)}
+.viewer .count{position:absolute;bottom:12px;inset-inline-start:14px;background:#121417cc;color:#fff;border-radius:999px;padding:3px 10px;font-size:.76rem;font-variant-numeric:tabular-nums;direction:ltr}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.thumbs button{flex:none;width:86px;height:58px;border-radius:9px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:#ddd;opacity:.65;transition:opacity .15s,border-color .15s}
+.thumbs button.tall{width:40px}
+.thumbs button[aria-current="true"]{border-color:var(--accent);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.sheet{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:36px;padding:26px 28px 32px}
+.sheet h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.03em;margin:4px 0 10px;line-height:1.1;text-wrap:balance}
+html[lang="ar"] .sheet h2{letter-spacing:0;line-height:1.3}
+.sheet .about{color:var(--muted);font-size:1.02rem;margin:0 0 18px;max-width:62ch}
+.feats{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.feats li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;line-height:1.5}
+.feats li::before{content:"";width:8px;height:8px;border-radius:50%;background:#c3c8c0;margin:8px 7px 0}
+.feats li.star::before{content:"★";width:auto;height:auto;background:none;color:var(--star);margin:0 3px;font-size:1rem;line-height:1.5}
+.feats li.star{font-weight:500}
+.spec{background:var(--bg);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;align-self:start}
+.spec dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 16px;font-size:.92rem}
+.spec dt{color:var(--muted)}.spec dd{margin:0;font-weight:500}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fact{background:var(--surface);border-radius:12px;padding:10px 12px}
+.fact b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.fact span{font-size:.74rem;color:var(--muted);line-height:1.3;display:block}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px}
+.cta:hover{background:#1a35d6}
+.private{font-size:.88rem;color:var(--muted);background:var(--surface);border-radius:12px;padding:12px 14px;border:1px dashed var(--line)}
+
+@media (max-width:1080px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters .row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .collage{max-width:560px;width:100%;margin-inline:auto}
+  .sheet{grid-template-columns:1fr;gap:22px;padding:22px 20px 28px}
+  .how .grid3{grid-template-columns:1fr}
+  .contact .box{grid-template-columns:1fr}
+  .top nav a:not(.navcta){display:none}
+}
+@media (max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .filters .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .filters .row .fbtn:first-child{grid-column:1/-1;flex-direction:row;align-items:baseline;gap:10px}
+  .hero{padding-block:32px 28px}
+  .lede{font-size:1.04rem}
+  dialog{width:100vw;max-height:100dvh;height:100dvh;border-radius:0;margin:0}
+  .ways{grid-template-columns:1fr}
+  .viewer{--vh:46vh}
+  .viewer img{max-width:calc(100% - 32px)}
+  .dl-close{top:calc(10px + env(safe-area-inset-top,0px))}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+
+<style>body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#work"><span class="mark">Z&amp;A</span><span data-i="brand">Zaven &amp; Ahmad</span></a>
+    <nav>
+      <a href="#work" data-i="navWork">Work</a>
+      <a href="#how" data-i="navHow">How we work</a>
+      <a href="#contact" class="navcta" data-i="navContact">Contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow mono"><span class="dot" aria-hidden="true"></span><span data-i="eyebrow">Two developers · Aleppo, Syria</span></div>
+        <h1 data-i="h1" data-html>We build the <em>systems</em> businesses run on.</h1>
+        <p class="lede" data-i="lede">CRMs, ERPs, point-of-sale, mobile apps and websites for shops, agencies, academies and transport companies. Arabic and English, built to be used every day.</p>
+        <div class="builders">
+          <div class="builder"><span class="av z">ZJ</span><div><b data-i="zName">Zaven Jooharian</b><span data-i="zRole">CRM / ERP developer · AI</span></div></div>
+          <div class="builder"><span class="av a">AS</span><div><b data-i="aName">Ahmad Sabagh</b><span data-i="aRole">Doctor · Web, App &amp; CRM developer</span></div></div>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="s s1"><img alt="" src="img/og-system/03.jpg"></div>
+        <div class="s s2"><img alt="" src="img/hooplog/01.jpg"></div>
+        <div class="s s3"><img alt="" src="img/puzzlex/09.jpg"></div>
+        <div class="tag"><span class="live-dot"></span><span data-i="collageTag">3D warehouse · OG System</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="filters" aria-label="Filter builds">
+    <div class="wrap"><div class="row" id="filters"></div></div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="sechead"><h2 id="workTitle" data-i="workTitle">All builds</h2><p data-i="workHint">Tap any build to open its screens and details.</p></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="sechead"><h2 data-i="howTitle">How we work</h2></div>
+      <div class="grid3">
+        <div class="it"><h3 data-i="how1t">Built around your day</h3><p data-i="how1">We sit with the people who will use the system, then build screens around their real jobs: the cashier, the driver, the owner.</p></div>
+        <div class="it"><h3 data-i="how2t">Arabic first, English too</h3><p data-i="how2">Right-to-left layouts made for Arabic, not mirrored copies. Prices in lira and dollars where the business needs both.</p></div>
+        <div class="it"><h3 data-i="how3t">Made for local reality</h3><p data-i="how3">Offline fallbacks, slow-network loading, cash on delivery, WhatsApp and Telegram. Systems that keep working in Syria.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="box">
+        <div>
+          <h2 data-i="ctTitle" data-html>Have a business to run? <em>Let’s build its system.</em></h2>
+          <p data-i="ctLede">Tell us what you do and what slows you down. We reply within a day, in Arabic or English.</p>
+        </div>
+        <div class="ways" id="ways"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>Zaven Jooharian &amp; Ahmad Sabagh</b> · <span data-i="foot">Aleppo, Syria</span></span>
+    <span data-i="foot2">Private systems are shown with permission. Live demos on request.</span>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <button class="dl-close" type="button" id="dClose" aria-label="Close">×</button>
+  <div class="dl-scroll">
+    <div class="viewer" id="viewer"></div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="sheet">
+      <div>
+        <div class="meta"><span class="mono cat" id="dCat"></span></div>
+        <h2 id="dTitle"></h2>
+        <p class="about" id="dAbout"></p>
+        <ul class="feats" id="dFeats"></ul>
+      </div>
+      <aside class="spec" id="dSpec"></aside>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const IMG = {"og-system":[{"src":"img/og-system/01.jpg","w":1440,"h":810},{"src":"img/og-system/02.jpg","w":1440,"h":810},{"src":"img/og-system/03.jpg","w":1440,"h":810},{"src":"img/og-system/04.jpg","w":1440,"h":810},{"src":"img/og-system/05.jpg","w":1440,"h":810},{"src":"img/og-system/06.jpg","w":601,"h":1300},{"src":"img/og-system/07.jpg","w":601,"h":1300},{"src":"img/og-system/08.jpg","w":601,"h":1300}],"og-ecommerce":[{"src":"img/og-ecommerce/01.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/02.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/03.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/04.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/05.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/06.jpg","w":1440,"h":810},{"src":"img/og-ecommerce/07.jpg","w":601,"h":1300},{"src":"img/og-ecommerce/08.jpg","w":601,"h":1300}],"coda-erp":[{"src":"img/coda-erp/01.jpg","w":1440,"h":753},{"src":"img/coda-erp/02.jpg","w":1440,"h":742},{"src":"img/coda-erp/03.jpg","w":1440,"h":731},{"src":"img/coda-erp/04.jpg","w":1440,"h":738}],"coda-website":[{"src":"img/coda-website/01.jpg","w":1440,"h":734},{"src":"img/coda-website/02.jpg","w":1440,"h":726},{"src":"img/coda-website/03.jpg","w":1440,"h":734},{"src":"img/coda-website/04.jpg","w":1440,"h":738},{"src":"img/coda-website/05.jpg","w":1440,"h":745}],"somar":[{"src":"img/somar/01.jpg","w":1440,"h":756},{"src":"img/somar/02.jpg","w":1440,"h":738},{"src":"img/somar/03.jpg","w":1440,"h":753},{"src":"img/somar/04.jpg","w":1440,"h":734},{"src":"img/somar/05.jpg","w":1440,"h":744}],"algoquant-erp":[{"src":"img/algoquant-erp/01.jpg","w":1440,"h":734},{"src":"img/algoquant-erp/02.jpg","w":1440,"h":745},{"src":"img/algoquant-erp/03.jpg","w":1440,"h":748},{"src":"img/algoquant-erp/04.jpg","w":1440,"h":743}],"algoquant-bots":[{"src":"img/algoquant-bots/01.jpg","w":764,"h":988},{"src":"img/algoquant-bots/02.jpg","w":764,"h":988},{"src":"img/algoquant-bots/03.jpg","w":764,"h":988}],"hooplog":[{"src":"img/hooplog/01.jpg","w":731,"h":1300},{"src":"img/hooplog/02.jpg","w":731,"h":1300},{"src":"img/hooplog/03.jpg","w":731,"h":1300},{"src":"img/hooplog/04.jpg","w":731,"h":1300},{"src":"img/hooplog/05.jpg","w":731,"h":1300},{"src":"img/hooplog/06.jpg","w":731,"h":1300},{"src":"img/hooplog/07.jpg","w":731,"h":1300},{"src":"img/hooplog/08.jpg","w":731,"h":1300},{"src":"img/hooplog/09.jpg","w":731,"h":1300},{"src":"img/hooplog/10.jpg","w":731,"h":1300}],"coach-sima":[{"src":"img/coach-sima/01.jpg","w":764,"h":988},{"src":"img/coach-sima/02.jpg","w":764,"h":988},{"src":"img/coach-sima/03.jpg","w":764,"h":988}],"kiwi":[{"src":"img/kiwi/01.jpg","w":764,"h":988},{"src":"img/kiwi/02.jpg","w":764,"h":988},{"src":"img/kiwi/03.jpg","w":764,"h":988},{"src":"img/kiwi/04.jpg","w":764,"h":988}],"puzzlex":[{"src":"img/puzzlex/01.jpg","w":1440,"h":810},{"src":"img/puzzlex/02.jpg","w":1440,"h":810},{"src":"img/puzzlex/03.jpg","w":1440,"h":810},{"src":"img/puzzlex/04.jpg","w":1440,"h":810},{"src":"img/puzzlex/05.jpg","w":1440,"h":810},{"src":"img/puzzlex/06.jpg","w":1440,"h":810},{"src":"img/puzzlex/07.jpg","w":1440,"h":810},{"src":"img/puzzlex/08.jpg","w":1440,"h":810},{"src":"img/puzzlex/09.jpg","w":601,"h":1300},{"src":"img/puzzlex/10.jpg","w":601,"h":1300},{"src":"img/puzzlex/11.jpg","w":601,"h":1300}],"hub4tech":[{"src":"img/hub4tech/01.jpg","w":764,"h":988},{"src":"img/hub4tech/02.jpg","w":764,"h":988},{"src":"img/hub4tech/03.jpg","w":764,"h":988},{"src":"img/hub4tech/04.jpg","w":764,"h":988}]};
+const UI = {
+  en:{brand:"Zaven & Ahmad",navWork:"Work",navHow:"How we work",eyebrow:"Two developers · Aleppo, Syria",
+    h1:'We build the <em>systems</em> businesses run on.',
+    lede:"CRMs, ERPs, point-of-sale, mobile apps and websites for shops, agencies, academies and transport companies. Arabic and English, built to be used every day.",
+    zName:"Zaven Jooharian",zRole:"CRM / ERP developer · AI",aName:"Ahmad Sabagh",aRole:"Doctor · Web, App & CRM developer",
+    collageTag:"3D warehouse · OG System",workTitle:"All builds",workHint:"Tap any build to open its screens and details.",
+    howTitle:"How we work",how1t:"Built around your day",how1:"We sit with the people who will use the system, then build screens around their real jobs: the cashier, the driver, the owner.",
+    how2t:"Arabic first, English too",how2:"Right-to-left layouts made for Arabic, not mirrored copies. Prices in lira and dollars where the business needs both.",
+    how3t:"Made for local reality",how3:"Offline fallbacks, slow-network loading, cash on delivery, WhatsApp and Telegram. Systems that keep working in Syria.",
+    foot:"Aleppo, Syria",foot2:"Private systems are shown with permission. Live demos on request.",
+    all:"All builds",system:"Business systems",web:"Websites & stores",app:"Apps & games",api:"APIs",
+    client:"Client",type:"Type",builtBy:"Built by",status:"Status",visit:"Visit live site",
+    privateNote:"Private client system. We can show a live demo on request.",soon:"Screens coming soon",close:"Close",
+    zFull:"Zaven Jooharian",aFull:"Ahmad Sabagh",and:" & ",empty:"No builds here yet.",
+    navContact:"Contact",ctTitle:'Have a business to run? <em>Let’s build its system.</em>',
+    ctLede:"Tell us what you do and what slows you down. We reply within a day, in Arabic or English.",
+    wa:"Message us on WhatsApp",tg:"Telegram",ig:"Instagram",em:"Email",
+    waHello:"Hi Zaven & Ahmad, I saw your portfolio and I'd like to talk about a project.",
+    askDemo:"Ask for a demo on WhatsApp",askLike:"Ask about a build like this",
+    waAbout:"Hi Zaven & Ahmad, I saw “{p}” on your portfolio. Can we talk about something similar?"},
+  ar:{brand:"زافين وأحمد",navWork:"الأعمال",navHow:"طريقة عملنا",eyebrow:"مطوّران · حلب، سوريا",
+    h1:'نبني <em>الأنظمة</em> التي تقوم عليها الأعمال.',
+    lede:"أنظمة CRM و ERP ونقاط بيع وتطبيقات موبايل ومواقع للمحلات والوكالات والأكاديميات وشركات النقل. بالعربي والإنكليزي، ومصنوعة لتُستخدم كل يوم.",
+    zName:"زافين جوهاريان",zRole:"مطوّر أنظمة CRM / ERP · ذكاء اصطناعي",aName:"أحمد سبّاغ",aRole:"طبيب · مطوّر مواقع وتطبيقات وأنظمة CRM",
+    collageTag:"مستودع ثلاثي الأبعاد · نظام OG",workTitle:"كل الأعمال",workHint:"اضغط على أي عمل لتشاهد شاشاته وتفاصيله.",
+    howTitle:"طريقة عملنا",how1t:"مبني حول يومك",how1:"نجلس مع الأشخاص الذين سيستخدمون النظام، ثم نبني الشاشات حول عملهم الحقيقي: الكاشير والسائق وصاحب العمل.",
+    how2t:"العربية أولاً، والإنكليزية أيضاً",how2:"تصميم من اليمين لليسار مصنوع للعربية، وليس نسخة معكوسة. والأسعار بالليرة والدولار حيث يحتاج العمل.",
+    how3t:"مصنوع لواقعنا",how3:"عمل بدون إنترنت عند الانقطاع، وتحميل مناسب للشبكات البطيئة، ودفع عند الاستلام، وواتساب وتيليغرام. أنظمة تبقى شغّالة في سوريا.",
+    foot:"حلب، سوريا",foot2:"الأنظمة الخاصة معروضة بإذن أصحابها. نعرض نسخة تجريبية عند الطلب.",
+    all:"كل الأعمال",system:"أنظمة أعمال",web:"مواقع ومتاجر",app:"تطبيقات وألعاب",api:"واجهات برمجية",
+    client:"العميل",type:"النوع",builtBy:"التطوير",status:"الحالة",visit:"زيارة الموقع",
+    privateNote:"نظام خاص بالعميل. يمكننا عرض نسخة تجريبية عند الطلب.",soon:"الشاشات قريباً",close:"إغلاق",
+    zFull:"زافين جوهاريان",aFull:"أحمد سبّاغ",and:" و",empty:"لا يوجد أعمال هنا بعد.",
+    navContact:"تواصل",ctTitle:'عندك عمل تديره؟ <em>خلّينا نبني نظامه.</em>',
+    ctLede:"احكِ لنا شو بتشتغل وشو اللي عم يبطّئ شغلك. منرد خلال يوم، بالعربي أو بالإنكليزي.",
+    wa:"راسلنا على واتساب",tg:"تيليغرام",ig:"إنستغرام",em:"البريد الإلكتروني",
+    waHello:"مرحبا زافين وأحمد، شفت أعمالكم على الموقع وحابب نحكي عن مشروع.",
+    askDemo:"اطلب نسخة تجريبية على واتساب",askLike:"اسأل عن عمل مشابه",
+    waAbout:"مرحبا زافين وأحمد، شفت «{p}» على موقعكم. فينا نحكي عن شي مشابه؟"}
+};
+const STATUS = {
+  live:{en:"Live",ar:"منشور"}, private:{en:"Private system",ar:"نظام خاص"}, store:{en:"On the App Store",ar:"على App Store"},
+  dev:{en:"In development",ar:"قيد التطوير"}, use:{en:"In daily use",ar:"قيد الاستخدام اليومي"},
+  android:{en:"Android app",ar:"تطبيق أندرويد"}, mobile:{en:"Mobile app",ar:"تطبيق موبايل"}, desktop:{en:"Desktop app",ar:"تطبيق للابتوب"},
+  prod:{en:"In production",ar:"قيد الاستخدام"}, request:{en:"Link on request",ar:"الرابط عند الطلب"}
+};
+const PILLCLASS = {live:"live",store:"store",dev:"dev",use:"use",prod:"use"};
+const f = (en,ar,star)=>({en,ar,star:!!star});
+
+const P = [
+ {id:"og-system",cat:"system",tint:"#E6F2C4",cover:{type:"mixed",shot:3,phone:6},status:"use",by:"ZA",
+  title:{en:"OG System",ar:"نظام OG"},client:{en:"OG Sports, Aleppo",ar:"OG Sports، حلب"},
+  type:{en:"POS · ERP · Delivery",ar:"نقطة بيع · ERP · توصيل"},
+  line:{en:"Retail operations for a sneaker and streetwear shop: till, warehouses, money and deliveries in one system.",ar:"نظام تشغيل كامل لمتجر سنيكرز وستريت وير: الكاشير والمستودعات والمال والتوصيل في نظام واحد."},
+  about:{en:"Used every day by cashiers, warehouse staff, drivers, managers, the owner and an outside print partner. Built to keep selling even when the internet drops.",ar:"يستخدمه يومياً الكاشير وموظفو المستودع والسائقون والمدراء وصاحب المحل وشريك طباعة خارجي. مبني ليستمر بالبيع حتى عند انقطاع الإنترنت."},
+  feats:[f("Keeps selling offline: a backup computer takes over the till and syncs every sale back.","يستمر بالبيع بدون إنترنت: جهاز احتياطي يستلم الكاشير ويزامن كل عملية بيع لاحقاً.",1),
+   f("Walkable 3D warehouse: the real back room modelled to scale, with a box for every pair.","مستودع ثلاثي الأبعاد يمكن التجول فيه: المخزن الحقيقي بمقاسه، وصندوق لكل زوج.",1),
+   f("Two-currency money engine: dollar prices, a live lira rate and a balance for every place money sits.","محرك مالي بعملتين: أسعار بالدولار وسعر ليرة مباشر ورصيد لكل مكان فيه مال.",1),
+   f("Barcode till with split payments, coupons and automatic receipt printing.","كاشير بالباركود مع دفع مقسّم وكوبونات وطباعة فواتير تلقائية."),
+   f("Full delivery office: handover sheets, cash on delivery, returns and a live tracking page for customers.","مكتب توصيل كامل: أوراق تسليم ودفع عند الاستلام ومرتجعات وصفحة تتبع مباشرة للزبون."),
+   f("Seven roles with their own home screens, plus a locked portal for the print partner.","سبعة أدوار لكل منها شاشة رئيسية خاصة، وبوابة مغلقة لشريك الطباعة.")],
+  facts:[["22",{en:"modules",ar:"وحدة"}],["7",{en:"user roles",ar:"أدوار"}],["160k",{en:"lines of code",ar:"سطر برمجي"}]]},
+ {id:"og-store",cat:"web",tint:"#ECECEA",cover:{type:"mixed",shot:2,phone:7},status:"request",by:"ZA",
+  title:{en:"OG Online Store",ar:"متجر OG الإلكتروني"},client:{en:"OG Sports, Aleppo",ar:"OG Sports، حلب"},
+  type:{en:"E-commerce · Admin",ar:"متجر إلكتروني · لوحة إدارة"},
+  line:{en:"A bilingual online store linked live to the shop's till and stock.",ar:"متجر إلكتروني بلغتين مربوط مباشرة بكاشير ومخزون المحل."},
+  about:{en:"Shoppers browse and order from their phones. Products, stock and prices come straight from OG System, and every order goes back to it.",ar:"يتصفح الزبائن ويطلبون من الموبايل. المنتجات والمخزون والأسعار تأتي مباشرة من نظام OG، وكل طلب يرجع إليه."},
+  feats:[f("Live link to the shop system, so no product is ever entered twice.","ربط مباشر بنظام المحل، فلا يُدخل أي منتج مرتين.",1),
+   f("Jerseys by league, club and legend, with league cards that grow full-screen.","قمصان حسب الدوري والنادي والأسطورة، وبطاقات دوري تكبر لتملأ الشاشة.",1),
+   f("Name and number back printing with a live shirt preview.","طباعة الاسم والرقم على ظهر القميص مع معاينة مباشرة.",1),
+   f("Cart drawer with a fly-to-bag animation, swipe to remove and suggestions.","سلة جانبية مع حركة طيران المنتج إلى السلة والسحب للحذف واقتراحات."),
+   f("“Find your size” from body or foot measurements, checked against stock.","«اعرف مقاسك» من قياسات الجسم أو القدم مع التحقق من توفره."),
+   f("Cash on delivery, transfers with a receipt photo, delivery to other cities and abroad.","دفع عند الاستلام وتحويل مع صورة الإيصال وتوصيل للمحافظات وخارج سوريا.")],
+  facts:[["25",{en:"store pages",ar:"صفحة متجر"}],["17",{en:"admin screens",ar:"شاشة إدارة"}],["2",{en:"languages",ar:"لغتان"}]]},
+ {id:"coda-hq",cat:"system",tint:"#FBE0DC",cover:{type:"screen",shot:1},status:"use",by:"ZA",
+  title:{en:"Coda CRM / ERP",ar:"نظام Coda لإدارة العمل"},client:{en:"Coda Media",ar:"كودا ميديا"},
+  type:{en:"CRM · ERP · AI assistant",ar:"CRM · ERP · مساعد ذكي"},
+  line:{en:"A media agency's whole operation, from first lead to published post, with a voice AI assistant.",ar:"كل عمل وكالة الإعلام من أول تواصل حتى نشر المحتوى، مع مساعد ذكي بالصوت."},
+  about:{en:"The team sends tasks to each other, plans content per client and follows money in one place. The assistant knows the whole operation and answers by voice or text.",ar:"الفريق يرسل المهام لبعضه ويخطط محتوى كل عميل ويتابع المال في مكان واحد. والمساعد يعرف كل تفاصيل العمل ويرد بالصوت أو بالكتابة."},
+  feats:[f("AI voice assistant that knows the whole operation, by voice or text, also on Telegram.","مساعد ذكي بالصوت أو الكتابة يعرف كل تفاصيل العمل، ومربوط بتيليغرام.",1),
+   f("“Today's round”: a step-by-step pass through clients, work and money.","«جولة اليوم»: مرور خطوة بخطوة على العملاء والعمل والمال.",1),
+   f("Team tasks sent between members, plus tasks for the AI agent.","مهام يرسلها الفريق لبعضه، ومهام للوكيل الذكي."),
+   f("Smart calendar and a content calendar per client: posts, photo sessions, exports.","تقويم ذكي وتقويم محتوى لكل عميل: منشورات وجلسات تصوير وتصدير."),
+   f("Business dashboard with clients, revenue, completion rates and custom widgets.","لوحة أعمال فيها العملاء والإيرادات ونسب الإنجاز وودجات قابلة للتخصيص."),
+   f("Daily team challenges with points, Arabic/English, installs as an app.","تحديات يومية للفريق بالنقاط، عربي/إنكليزي، ويُثبّت كتطبيق.")]},
+ {id:"somar",cat:"system",tint:"#E2E6EB",cover:{type:"screen",shot:1},status:"use",by:"ZA",
+  title:{en:"Somar University Transport",ar:"نظام سومر للنقل الجامعي"},client:{en:"Somar, transport company",ar:"شركة سومر للنقل"},
+  type:{en:"Transport management · QR",ar:"إدارة نقل · QR"},
+  line:{en:"Buses, subscriptions and QR boarding for students, doctors and staff on their way to university.",ar:"باصات واشتراكات وصعود بـ QR للطلاب والدكاترة والموظفين في طريقهم إلى الجامعة."},
+  about:{en:"A transport company runs its university routes from one dashboard: who rides, which line, which stop, and who has paid.",ar:"شركة نقل تدير خطوطها الجامعية من لوحة واحدة: من يركب، وعلى أي خط، ومن أي نقطة، ومن دفع."},
+  feats:[f("QR boarding: supervisors scan every rider, with a live scan log and a map of today's scans.","صعود بـ QR: المشرف يمسح كل راكب، مع سجل مسح مباشر وخريطة لمسحات اليوم.",1),
+   f("Several universities in one system, switched from the top bar.","عدة جامعات في نظام واحد، والتبديل بينها من الشريط العلوي.",1),
+   f("Lines and stops with go and return trips, times and stop counts.","خطوط ونقاط وقوف مع رحلات الذهاب والعودة والأوقات."),
+   f("Students, doctors and staff with packages, subscriptions and printed QR cards.","طلاب ودكاترة وموظفون مع باقات واشتراكات وبطاقات QR مطبوعة."),
+   f("Alerts for no balance, missing photo, ending subscriptions and over-capacity.","تنبيهات: بلا رصيد، بلا صورة، اشتراكات تنتهي، وتجاوز السعة."),
+   f("Excel import, PDF export and attendance statistics, in Arabic.","استيراد Excel وتصدير PDF وإحصائيات دوام، بالعربية.")],
+  facts:[["1,296",{en:"students, one university",ar:"طالب في جامعة واحدة"}],["163",{en:"doctors",ar:"دكتور"}],["24",{en:"staff",ar:"موظف"}]]},
+ {id:"hooplog",cat:"app",tint:"#FCE2D2",cover:{type:"phones",imgs:[1,2,3]},status:"android",by:"Z",
+  title:{en:"HoopLog",ar:"HoopLog"},client:{en:"Own product",ar:"منتج خاص بنا"},
+  type:{en:"Mobile apps · Coach + Player",ar:"تطبيقات موبايل · مدرب + لاعب"},
+  line:{en:"Two basketball apps, one for coaches and one for players: stats, live games and a playbook.",ar:"تطبيقا كرة سلة، واحد للمدرب وواحد للاعب: إحصائيات ومباريات مباشرة ودفتر خطط."},
+  about:{en:"It started as an app for one coach and grew into a product any coach can brand as their own. Everything works offline on the coach's phone.",ar:"بدأ كتطبيق لمدربة واحدة وصار منتجاً يمكن لأي مدرب أن يضع عليه هويته. وكل شيء يعمل بدون إنترنت على موبايل المدرب."},
+  feats:[f("Live shot tracking: made or missed per player, 2PT / 3PT / FT, with a “heating up” streak.","تسجيل التسديد مباشرة: دخلت أو ضاعت لكل لاعب، ثنائية وثلاثية وحرة، مع «الإيد سخنت».",1),
+   f("Live game mode: score, quarters, clock, fouls, timeouts and substitutions.","وضع المباراة: النتيجة والأرباع والوقت والأخطاء والمستقطع والتبديل.",1),
+   f("Playbook: draw plays on a court, animate them and teach them step by step.","دفتر الخطط: ارسم الخطة على الملعب وحرّكها واشرحها خطوة بخطوة.",1),
+   f("Player stats compared with last month, a leaderboard and a shareable player card.","إحصائيات اللاعب مقارنة بالشهر الماضي ولوحة صدارة وبطاقة لاعب للمشاركة."),
+   f("Calendar for trainings and matches; each coach adds their own name, club and color.","تقويم للتمارين والمباريات، وكل مدرب يضيف اسمه وناديه ولونه."),
+   f("Works offline, Arabic and English.","يعمل بدون إنترنت، عربي وإنكليزي.")]},
+ {id:"puzzlex",cat:"web",tint:"#EEF8BF",cover:{type:"mixed",shot:1,phone:9},status:"dev",by:"ZA",
+  title:{en:"PuzzleX Media",ar:"PuzzleX Media"},client:{en:"PuzzleX Media, Gulf & Syria",ar:"PuzzleX Media، الخليج وسوريا"},
+  type:{en:"Agency website · Admin",ar:"موقع وكالة · لوحة إدارة"},
+  line:{en:"A marketing agency site where everything is a puzzle piece, from the opening to the 404 page.",ar:"موقع وكالة تسويق كل شيء فيه قطعة أحجية، من الافتتاحية حتى صفحة 404."},
+  about:{en:"The agency's line is “We are the missing piece in your puzzle”, so the whole site is built from that one idea.",ar:"شعار الوكالة «نحن القطعة الناقصة في أحجيتك»، فبُني الموقع كله من هذه الفكرة."},
+  feats:[f("Scroll-driven puzzle story: pieces scatter, swirl and assemble into the logo.","قصة أحجية مع التمرير: القطع تتبعثر وتدور ثم تتجمع لتشكل الشعار.",1),
+   f("Around 48 partner logos snap into a framed jigsaw with one empty piece: “your spot”.","نحو ٤٨ شعار شريك تتركب في أحجية مؤطرة مع قطعة فارغة: «مكانك هنا».",1),
+   f("Light/dark switch with a puzzle-piece wipe.","تبديل فاتح/داكن بانتقال من قطع الأحجية.",1),
+   f("“Build your puzzle”: picked services carry over to the contact form.","«ركّب أحجيتك»: الخدمات المختارة تنتقل إلى نموذج التواصل."),
+   f("Puzzle cursor, snap sounds, and an admin panel to edit every text and logo.","مؤشر على شكل قطعة وأصوات تركيب ولوحة إدارة لتعديل كل نص وشعار."),
+   f("Arabic and English, with animations retuned for phones.","عربي وإنكليزي، مع حركات معدّلة للموبايل.")]},
+ {id:"hub4tech",cat:"web",tint:"#FFE6D4",cover:{type:"phones",tall:1,imgs:[2,1,3]},status:"live",link:"https://hub4tech.lovable.app",by:"Z",
+  title:{en:"Hub4Tech",ar:"Hub4Tech"},client:{en:"Our own store",ar:"متجرنا الخاص"},
+  type:{en:"Digital products store",ar:"متجر منتجات رقمية"},
+  line:{en:"A marketplace for digital products: AI tools, subscriptions, software and games.",ar:"متجر منتجات رقمية: أدوات ذكاء اصطناعي واشتراكات وبرامج وألعاب."},
+  about:{en:"Customers find AI tools, subscriptions and games in one place, with help choosing and delivery times shown upfront.",ar:"يجد الزبون أدوات الذكاء الاصطناعي والاشتراكات والألعاب في مكان واحد، مع مساعدة في الاختيار ووقت التسليم واضح من البداية."},
+  feats:[f("“Help me” assistant and AI picks that recommend products.","مساعد «ساعدني» واقتراحات ذكية للمنتجات.",1),
+   f("“Request a game account”: pick a game, set a budget, the team finds the account.","«اطلب حساب لعبة»: اختر اللعبة وحدد الميزانية والفريق يجد الحساب.",1),
+   f("62+ products with category tabs, search, platform filter and sorting.","أكثر من ٦٢ منتجاً مع تصنيفات وبحث وفلترة حسب المنصة وترتيب."),
+   f("Gaming mega bundles, plus trending and bestseller badges.","حزم ألعاب ضخمة وشارات الأكثر رواجاً ومبيعاً."),
+   f("Delivery time and stock shown on every product.","وقت التسليم والمخزون ظاهران على كل منتج.")]},
+ {id:"aq-system",cat:"system",tint:"#DCEAF9",cover:{type:"screen",shot:1},status:"use",by:"Z",
+  title:{en:"AlgoQuant Academy System",ar:"نظام أكاديمية AlgoQuant"},client:{en:"AlgoQuant, AI academy",ar:"AlgoQuant، أكاديمية ذكاء اصطناعي"},
+  type:{en:"CRM · ERP",ar:"CRM · ERP"},
+  line:{en:"Leads, courses, students, tasks and money for an AI training academy.",ar:"العملاء المحتملون والدورات والطلاب والمهام والمال لأكاديمية تدريب على الذكاء الاصطناعي."},
+  about:{en:"The academy follows every lead from the website to a paid seat, and runs its courses and team from the same place.",ar:"تتابع الأكاديمية كل عميل محتمل من الموقع حتى مقعد مدفوع، وتدير دوراتها وفريقها من المكان نفسه."},
+  feats:[f("Leads arrive automatically from the website's AI bot.","العملاء المحتملون يصلون تلقائياً من بوت الموقع الذكي.",1),
+   f("Sales pipeline: new, interested, contacted, paid, registered, lost.","مسار مبيعات: جديد، مهتم، تم التواصل، دفع، مسجّل، خسارة."),
+   f("Courses with trainer, sessions, seats and progress.","دورات مع المدرب والجلسات والمقاعد ونسبة التقدم."),
+   f("Students with attendance, payments and balances due.","طلاب مع الحضور والدفعات والأرصدة المستحقة."),
+   f("Tasks with urgent alerts, staff wallets, finance and reports.","مهام مع تنبيهات عاجلة ومحافظ موظفين ومالية وتقارير.")]},
+ {id:"aq-bots",cat:"web",tint:"#DCEAF9",cover:{type:"phones",tall:1,imgs:[1,2,3]},status:"live",link:"https://algoquant.vip",by:"Z",
+  title:{en:"AlgoQuant.vip",ar:"AlgoQuant.vip"},client:{en:"AlgoQuant, AI academy",ar:"AlgoQuant، أكاديمية ذكاء اصطناعي"},
+  type:{en:"Website · AI bots",ar:"موقع · بوتات ذكية"},
+  line:{en:"An academy site built as an elevator: every course is a floor, and AI bots replace the forms.",ar:"موقع أكاديمية مبني كمصعد: كل دورة طابق، وبوتات ذكية بدل الاستمارات."},
+  about:{en:"Visitors talk to the bots instead of filling forms. The conversations land in the academy's system as leads and course ideas.",ar:"يتحدث الزوار مع البوتات بدل تعبئة الاستمارات، والمحادثات تصل إلى نظام الأكاديمية كعملاء وأفكار دورات."},
+  feats:[f("Floor advisor bot: asks about your work, goals and AI level, then recommends a course.","بوت «رشّحلي طابق»: يسأل عن عملك وأهدافك ومستواك ثم يرشح الدورة المناسبة.",1),
+   f("Idea bot: collects new course ideas for the team to review.","بوت «عندي فكرة طابق»: يجمع أفكار دورات جديدة لمراجعتها.",1),
+   f("Elevator concept: a floor counter, a “call the elevator” button and a floors list.","فكرة المصعد: عدّاد طوابق وزر «استدعِ المصعد» وقائمة الطوابق."),
+   f("Leads and chats go straight into the academy's CRM.","العملاء والمحادثات تذهب مباشرة إلى نظام الأكاديمية."),
+   f("Syrian Arabic and English.","عربي بالمحكية السورية وإنكليزي.")]},
+ {id:"coda-web",cat:"web",tint:"#FBE0DC",cover:{type:"screen",shot:3},status:"live",link:"https://coda-media.com",by:"ZA",
+  title:{en:"Coda Media Website",ar:"موقع كودا ميديا"},client:{en:"Coda Media",ar:"كودا ميديا"},
+  type:{en:"Agency website",ar:"موقع وكالة"},
+  line:{en:"A record-player concept for a creative agency: services play like tracks on a vinyl.",ar:"فكرة أسطوانة موسيقية لوكالة إبداعية: الخدمات تُعزف كمقاطع على أسطوانة."},
+  about:{en:"Coda means the closing passage of a piece of music, so the site plays the agency's services like a record.",ar:"كلمة «كودا» تعني الخاتمة في المقطوعة الموسيقية، فيعرض الموقع خدمات الوكالة كأنها أسطوانة."},
+  feats:[f("Vinyl concept: each service is a track, and the turntable changes as you scroll.","فكرة الأسطوانة: كل خدمة مقطع، والأسطوانة تتغير مع التمرير.",1),
+   f("Scroll-driven typography and an animated logo reveal.","نصوص كبيرة تتحرك مع التمرير وكشف متحرك للشعار.",1),
+   f("Arabic and English switch.","تبديل عربي وإنكليزي."),
+   f("Contact section with WhatsApp, Instagram and copy-number.","قسم تواصل مع واتساب وإنستغرام ونسخ الرقم.")]},
+ {id:"kiwi",cat:"web",tint:"#E6EECC",cover:{type:"phones",tall:1,imgs:[1,3,4]},status:"live",link:"https://kiwicreativesy.com",by:"ZA",
+  title:{en:"Kiwi Creative",ar:"Kiwi Creative"},client:{en:"Kiwi Creative, Aleppo",ar:"Kiwi Creative، حلب"},
+  type:{en:"Agency website",ar:"موقع وكالة"},
+  line:{en:"A playful agency site where the logo zooms into a full-screen kiwi as you scroll.",ar:"موقع وكالة مرح يكبر فيه الشعار ليصبح حبة كيوي تملأ الشاشة مع التمرير."},
+  about:{en:"A social media and branding agency that wanted something simple, fun and theirs. The kiwi does the talking.",ar:"وكالة سوشال ميديا وهوية بصرية أرادت شيئاً بسيطاً ومرحاً ويشبهها. والكيوي يحكي عنها."},
+  feats:[f("Scroll-driven intro: the kiwi logo zooms into the fruit.","مقدمة مع التمرير: شعار الكيوي يتحول إلى الفاكهة.",1),
+   f("Big playful type and a kiwi-slice scroll indicator.","خطوط كبيرة مرحة ومؤشر تمرير على شكل شريحة كيوي."),
+   f("Services, team portraits with oversized names, and an FAQ.","الخدمات وصور الفريق مع أسماء كبيرة والأسئلة الشائعة."),
+   f("Instagram “Message us” button and pages ready for search engines.","زر «راسلنا» على إنستغرام وصفحات جاهزة لمحركات البحث.")]},
+ {id:"sima",cat:"web",tint:"#FFF4B0",cover:{type:"phones",tall:1,imgs:[2,1,3]},status:"live",link:"https://coachsima.network",by:"ZA",
+  title:{en:"Coach Sima",ar:"كوتش سيما"},client:{en:"Coach Sima, fitness & nutrition",ar:"كوتش سيما، لياقة وتغذية"},
+  type:{en:"Coach website",ar:"موقع مدربة"},
+  line:{en:"A fitness coach's website with a free calorie calculator that runs on the phone.",ar:"موقع مدربة لياقة مع حاسبة سعرات مجانية تعمل على الموبايل."},
+  about:{en:"Sima trains women, and children and adults with special needs. The site tells her story and gives visitors a useful tool before they ever book.",ar:"تدرّب سيما النساء والأطفال والكبار من ذوي الاحتياجات الخاصة. الموقع يحكي قصتها ويعطي الزائر أداة مفيدة قبل أن يحجز."},
+  feats:[f("Free health calculator: how many calories your body burns, calculated on the device.","حاسبة صحة مجانية: كم سعرة يحرق جسمك، تُحسب على جهازك.",1),
+   f("App-like design with a floating bottom bar on phones.","تصميم يشبه التطبيق مع شريط سفلي عائم على الموبايل."),
+   f("Her story, numbers and a gallery: before and after, certificates, kids club.","قصتها وأرقامها ومعرض: قبل وبعد والشهادات ونادي الأطفال."),
+   f("Blog: fitness for special needs, sport after bariatric surgery.","مدونة: اللياقة لذوي الاحتياجات الخاصة والرياضة بعد عمليات السمنة."),
+   f("Reviews, contact form, WhatsApp and Instagram, in Arabic and English.","آراء العميلات ونموذج تواصل وواتساب وإنستغرام، بالعربي والإنكليزي.")]},
+ {id:"mechatro",cat:"system",tint:"#DCE7F4",cover:{type:"art",art:"doc"},status:"use",by:"ZA",soon:1,
+  title:{en:"Mechatro Flow",ar:"Mechatro Flow"},client:{en:"Mechatro, MEP engineering",ar:"ميكاترو للهندسة الكهروميكانيكية"},
+  type:{en:"CRM · ERP · Documents",ar:"CRM · ERP · مستندات"},
+  line:{en:"An engineering firm's tasks, money and branded documents in one place.",ar:"مهام ومال ومستندات شركة هندسية بهويتها في مكان واحد."},
+  about:{en:"The team tracks projects and finances, and turns Word quotations into branded PDFs without redoing the layout.",ar:"يتابع الفريق المشاريع والمالية، ويحوّل عروض الأسعار من Word إلى PDF بهوية الشركة بدون إعادة التنسيق."},
+  feats:[f("Quotation editor: import a Word quotation, edit it, export a PDF that matches the original.","محرر عروض أسعار: استيراد ملف Word وتعديله وتصديره PDF مطابقاً للأصل.",1),
+   f("Project tasks with multi-member assignment and time tracking.","مهام مشاريع لعدة أعضاء مع تتبع الوقت."),
+   f("Finance: expenses, salaries, invoices and subscriptions.","المالية: المصاريف والرواتب والفواتير والاشتراكات."),
+   f("Admin controls and real-time updates.","صلاحيات إدارية وتحديثات لحظية."),
+   f("Arabic and English.","عربي وإنكليزي.")]},
+ {id:"hub",cat:"system",tint:"#E6E3F6",cover:{type:"art",art:"hub"},status:"use",by:"ZA",soon:1,
+  title:{en:"The Hub",ar:"نظام Hub"},client:{en:"Clapital · Dexotron · Dinova",ar:"Clapital · Dexotron · Dinova"},
+  type:{en:"Multi-company CRM · ERP",ar:"CRM · ERP لعدة شركات"},
+  line:{en:"One CRM/ERP running three companies from a single hub.",ar:"نظام CRM/ERP واحد يدير ثلاث شركات من مركز واحد."},
+  about:{en:"Three companies share one system, and each keeps its own clients, team and numbers.",ar:"ثلاث شركات تتشارك نظاماً واحداً، وكل شركة تحتفظ بعملائها وفريقها وأرقامها."},
+  feats:[f("Three companies run from one hub, each kept separate.","ثلاث شركات تُدار من مركز واحد، وكل شركة منفصلة.",1),
+   f("Clients, tasks, team and money for every company.","العملاء والمهام والفريق والمال لكل شركة.")]},
+ {id:"purple",cat:"app",tint:"#1B1530",cover:{type:"art",art:"purple"},status:"store",by:"Z",soon:1,
+  title:{en:"Don't Touch the Purple",ar:"لا تلمس البنفسجي"},client:{en:"Own product",ar:"منتج خاص بنا"},
+  type:{en:"Mobile arcade game",ar:"لعبة أركيد للموبايل"},
+  line:{en:"An arcade game on the App Store: tap the lights, never the purple.",ar:"لعبة أركيد على App Store: المس الأضواء، ولا تلمس البنفسجي أبداً."},
+  about:{en:"One rule, many games. It started as a nine-square reflex game and grew into a small world of mini-games.",ar:"قاعدة واحدة وألعاب كثيرة. بدأت كلعبة سرعة بتسعة مربعات وكبرت إلى عالم صغير من الألعاب."},
+  feats:[f("Gets harder the longer you survive: more lights, with purple mixed in.","تصعب كلما صمدت أكثر: أضواء أكثر والبنفسجي يختلط بها.",1),
+   f("A world of mini-games on the same rule: waterfall, memory, wheel, purple cannon.","عالم ألعاب صغيرة بنفس القاعدة: الشلال والذاكرة والدولاب والمدفع البنفسجي.",1),
+   f("Single player and multiplayer with names, turns and a 3-2-1 countdown.","لعب فردي وجماعي بالأسماء والأدوار وعدّ تنازلي."),
+   f("Coins and rare gems, a skins shop, a daily luck wheel and a hall of fame.","عملات وجواهر نادرة ومتجر أشكال ودولاب حظ يومي ولوحة أبطال."),
+   f("Retro arcade look with sound, music and haptics.","ستايل أركيد قديم مع أصوات وموسيقى واهتزاز.")]},
+ {id:"photoswipe",cat:"app",tint:"#E7E2F7",cover:{type:"art",art:"swphoto"},status:"mobile",by:"Z",soon:1,
+  title:{en:"PhotoSwipe",ar:"PhotoSwipe"},client:{en:"Own product",ar:"منتج خاص بنا"},
+  type:{en:"Mobile app",ar:"تطبيق موبايل"},
+  line:{en:"Clean your gallery by swiping: right to trash, left to keep.",ar:"نظّف معرض الصور بالسحب: يمين للسلة، يسار للإبقاء."},
+  about:{en:"Thousands of photos, no time to sort them. PhotoSwipe shows them one by one so cleaning takes minutes.",ar:"آلاف الصور ولا وقت لترتيبها. PhotoSwipe يعرضها واحدة واحدة فيصير التنظيف مسألة دقائق."},
+  feats:[f("Photos come one by one: swipe right to trash, left to keep.","الصور تظهر واحدة واحدة: اسحب يميناً للسلة ويساراً للإبقاء.",1),
+   f("Frees up big storage in minutes without scrolling the gallery.","يوفر مساحة كبيرة خلال دقائق بدون تقليب المعرض."),
+   f("Review the trash before deleting for good.","راجع السلة قبل الحذف النهائي.")]},
+ {id:"fileswipe",cat:"app",tint:"#DDEFEA",cover:{type:"art",art:"swfile"},status:"desktop",by:"Z",soon:1,
+  title:{en:"FileSwipe",ar:"FileSwipe"},client:{en:"Own product",ar:"منتج خاص بنا"},
+  type:{en:"Desktop app",ar:"تطبيق للابتوب"},
+  line:{en:"The same swipe idea for laptop files: free disk space fast.",ar:"نفس فكرة السحب لملفات اللابتوب: وفّر مساحة القرص بسرعة."},
+  about:{en:"PhotoSwipe's sister app for the laptop, for the old downloads, videos and archives nobody remembers.",ar:"التطبيق الشقيق لـ PhotoSwipe على اللابتوب، للتحميلات والفيديوهات والأرشيفات القديمة التي نسيها الجميع."},
+  feats:[f("Files come one by one: right to trash, left to keep.","الملفات تظهر واحداً واحداً: يمين للسلة ويسار للإبقاء.",1),
+   f("Free up disk space without digging through folders.","وفّر مساحة القرص بدون البحث داخل المجلدات."),
+   f("Review the trash before deleting for good.","راجع السلة قبل الحذف النهائي.")]},
+ {id:"fx-api",cat:"api",tint:"#DDF1E2",cover:{type:"art",art:"fx"},status:"prod",by:"Z",
+  title:{en:"Syrian Lira Rate API",ar:"واجهة سعر الليرة السورية"},client:{en:"Own product",ar:"منتج خاص بنا"},
+  type:{en:"Exchange rate API",ar:"واجهة سعر صرف"},
+  line:{en:"Keeps the Syrian lira exchange rate up to date on any website.",ar:"تحدّث سعر صرف الليرة السورية تلقائياً على أي موقع."},
+  about:{en:"Plug it into a store or a system and prices show in lira and dollars without anyone typing the rate in.",ar:"اربطها بأي متجر أو نظام فتظهر الأسعار بالليرة والدولار بدون أن يُدخل أحد السعر يدوياً."},
+  feats:[f("Live USD to SYP rate, updated automatically.","سعر الدولار مقابل الليرة مباشرة، ويتحدث تلقائياً.",1),
+   f("Any website or system can call it to convert prices.","يمكن لأي موقع أو نظام استخدامها لتحويل الأسعار."),
+   f("Already powers the two-currency prices in OG System and the OG store.","تشغّل الأسعار بعملتين في نظام OG ومتجر OG.")]}
+];
+
+/* ===== CONTACT DETAILS: fill these in. A button stays hidden while its value is empty. =====
+   whatsapp:  full number, digits only, with country code, e.g. "963912345678"
+   email:     e.g. "hello@ahmad-zaven.io"
+   instagram: username without @, e.g. "ahmad.zaven"
+   telegram:  username without @, e.g. "ahmadzaven"                                         */
+const CONTACT = { whatsapp:"", email:"", instagram:"", telegram:"" };
+
+let lang = "en";
+try{ const s = localStorage.getItem("za-lang"); if(s) lang = s; else if((navigator.language||"").startsWith("ar")) lang="ar"; }catch(e){}
+let filter = "all";
+const $ = s=>document.querySelector(s);
+const tx = o => (o && (o[lang] ?? o.en)) ?? "";
+const u = k => UI[lang][k] ?? UI.en[k];
+const imgs = p => IMG[p.img||p.id] || [];
+// map card ids to manifest folders
+const FOLDER = {"og-system":"og-system","og-store":"og-ecommerce","coda-hq":"coda-erp","somar":"somar","hooplog":"hooplog","puzzlex":"puzzlex","hub4tech":"hub4tech","aq-system":"algoquant-erp","aq-bots":"algoquant-bots","coda-web":"coda-website","kiwi":"kiwi","sima":"coach-sima"};
+P.forEach(p=>{ if(FOLDER[p.id]) p.img = FOLDER[p.id]; });
+const src = (p,i)=> (imgs(p)[i-1]||{}).src;
+
+function byChips(by){
+  let h = '<span class="by" aria-hidden="true">';
+  if(by.includes("Z")) h+='<span class="av z">ZJ</span>';
+  if(by.includes("A")) h+='<span class="av a">AS</span>';
+  return h+'</span>';
+}
+function byText(by){
+  const n=[]; if(by.includes("Z")) n.push(u("zFull")); if(by.includes("A")) n.push(u("aFull"));
+  return n.join(u("and"));
+}
+function pill(p){ const cls=PILLCLASS[p.status]||""; return `<span class="pill ${cls}"><i></i>${tx(STATUS[p.status])}</span>`; }
+
+function art(kind){
+  if(kind==="purple") return `<div class="art"><div class="pg" data-purple>${'<span></span>'.repeat(9)}</div><div class="pg-cap">DON'T TOUCH THE PURPLE</div></div>`;
+  if(kind==="swphoto") return `<div class="art"><div class="sw" data-swipe>${["ph1","ph2","ph3","ph4"].map(c=>`<div class="c ${c}"><span class="stamp t">TRASH</span><span class="stamp k">KEEP</span></div>`).join("")}</div></div>`;
+  if(kind==="swfile"){
+    const files=[["old_backup_2023.zip","4.2 GB","#F2B90F"],["screen-recording.mov","1.8 GB","#7A4BFF"],["invoice_final_v3.pdf","2 MB","#E5383B"],["Downloads/setup.exe","640 MB","#3D8BFF"]];
+    return `<div class="art"><div class="sw" data-swipe>${files.map(f=>`<div class="c fl"><span class="ic" style="--fc:${f[2]}"></span><b>${f[0]}</b><small>${f[1]}</small><span class="stamp t">TRASH</span><span class="stamp k">KEEP</span></div>`).join("")}</div></div>`;
+  }
+  if(kind==="fx") return `<div class="art"><div class="fx" data-fx><div class="pair"><span>USD → SYP</span><span class="live-dot">LIVE</span></div><div class="val">141.50</div><div class="chg up">+0.00%</div><svg viewBox="0 0 200 46" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#1DB954" stroke-width="2" points=""/></svg><div class="note">${lang==="ar"?"قيم توضيحية":"Illustrative values"}</div></div></div>`;
+  if(kind==="hub") return `<div class="art hub"><svg viewBox="0 0 300 200" aria-hidden="true">
+    <g stroke="#7A68D8" stroke-width="2" fill="none"><path class="flow" d="M150 100 L60 45"/><path class="flow" d="M150 100 L240 45"/><path class="flow" d="M150 100 L150 172"/></g>
+    <circle cx="150" cy="100" r="30" fill="#4B33C9"/><text x="150" y="105" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="#fff">HUB</text>
+    <g font-family="Readex Pro,sans-serif" font-size="11" font-weight="600" fill="#2B2350" text-anchor="middle">
+    <rect x="20" y="28" width="80" height="30" rx="9" fill="#fff"/><text x="60" y="47">Clapital</text>
+    <rect x="200" y="28" width="80" height="30" rx="9" fill="#fff"/><text x="240" y="47">Dexotron</text>
+    <rect x="110" y="160" width="80" height="30" rx="9" fill="#fff"/><text x="150" y="179">Dinova</text></g></svg></div>`;
+  if(kind==="doc") return `<div class="art"><div class="doc"><div class="pg2"><i></i><i></i><i></i><i></i><i></i><i></i><span class="ft">.docx</span></div><span class="arr">→</span><div class="pg2 pdf"><span class="hd"></span><i></i><i></i><i></i><i></i><i></i><span class="ft">.pdf</span></div></div></div>`;
+  return "";
+}
+
+function coverHTML(p){
+  const c=p.cover; let inner="", cls="cover";
+  if(c.type==="screen"){ inner=`<div class="shot"><img loading="lazy" alt="" src="${src(p,c.shot)}"></div>`; }
+  else if(c.type==="mixed"){ cls+=" mixed"; inner=`<div class="shot"><img loading="lazy" alt="" src="${src(p,c.shot)}"></div><div class="phone"><img loading="lazy" alt="" src="${src(p,c.phone)}"></div>`; }
+  else if(c.type==="phones"){ cls+=" phones"+(c.tall?" tall":""); inner=c.imgs.map(i=>`<div class="phone"><img loading="lazy" alt="" src="${src(p,i)}"></div>`).join(""); }
+  else if(c.type==="art"){ inner=art(c.art); }
+  const soon = p.soon?`<span class="soon">${u("soon")}</span>`:"";
+  return `<div class="${cls}" style="--tint:${p.tint}">${soon}${inner}</div>`;
+}
+
+function renderFilters(){
+  const cats=["all","system","web","app","api"];
+  const n=k=> k==="all"?P.length:P.filter(p=>p.cat===k).length;
+  $("#filters").innerHTML = cats.map(k=>`<button class="fbtn" type="button" data-f="${k}" aria-pressed="${filter===k}"><span class="n">${n(k)}</span><span class="l">${u(k)}</span></button>`).join("");
+  $("#filters").querySelectorAll(".fbtn").forEach(b=>b.addEventListener("click",()=>{ filter=b.dataset.f; renderFilters(); applyFilter(); }));
+}
+function applyFilter(){
+  let shown=0;
+  document.querySelectorAll(".card").forEach(c=>{ const ok = filter==="all"||c.dataset.cat===filter; c.hidden=!ok; if(ok) shown++; });
+  $("#workTitle").textContent = u(filter);
+}
+function renderGrid(){
+  $("#grid").innerHTML = P.map(p=>`
+    <button class="card" type="button" data-id="${p.id}" data-cat="${p.cat}" aria-label="${tx(p.title)}">
+      ${coverHTML(p)}
+      <div class="body">
+        <div class="meta"><span class="mono cat">${tx(p.type)}</span>${pill(p)}</div>
+        <h3>${tx(p.title)}</h3>
+        <p class="line">${tx(p.line)}</p>
+        <div class="foot"><span class="client">${tx(p.client)}</span>${byChips(p.by)}</div>
+      </div>
+    </button>`).join("");
+  document.querySelectorAll(".card").forEach(c=>c.addEventListener("click",()=>openProject(c.dataset.id)));
+  applyFilter(); startArt(document);
+}
+const ICON = {
+  wa:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>',
+  tg:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 19.9c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.4l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3Z"/></svg>',
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  em:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>'
+};
+const waLink = text => `https://wa.me/${CONTACT.whatsapp.replace(/\D/g,"")}?text=${encodeURIComponent(text)}`;
+function renderContact(){
+  const c=CONTACT, ways=[];
+  if(c.whatsapp) ways.push({cls:"primary",href:waLink(u("waHello")),icon:"wa",label:u("wa"),sub:"+"+c.whatsapp.replace(/\D/g,"")});
+  if(c.telegram) ways.push({href:`https://t.me/${c.telegram.replace(/^@/,"")}`,icon:"tg",label:u("tg"),sub:"@"+c.telegram.replace(/^@/,"")});
+  if(c.instagram) ways.push({href:`https://instagram.com/${c.instagram.replace(/^@/,"")}`,icon:"ig",label:u("ig"),sub:"@"+c.instagram.replace(/^@/,"")});
+  if(c.email) ways.push({href:`mailto:${c.email}`,icon:"em",label:u("em"),sub:c.email,self:true});
+  $("#contact").hidden = !ways.length;
+  document.querySelectorAll('a[href="#contact"]').forEach(a=>a.hidden=!ways.length);
+  $("#ways").innerHTML = ways.map(w=>`<a class="way ${w.cls||""}" href="${w.href}"${w.self?"":' target="_blank" rel="noopener"'}>${ICON[w.icon]}<span><b>${w.label}</b><small>${w.sub}</small></span></a>`).join("");
+}
+function renderUI(){
+  document.documentElement.lang = lang; document.documentElement.dir = lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i]").forEach(el=>{ const v=u(el.dataset.i); if(el.hasAttribute("data-html")) el.innerHTML=v; else el.textContent=v; });
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.lang===lang)));
+  $("#dClose").setAttribute("aria-label",u("close"));
+  renderContact();
+}
+
+/* dialog */
+const dlg=$("#dlg"); let cur=null, idx=0;
+function openProject(id){
+  cur=P.find(p=>p.id===id); if(!cur) return; idx=0;
+  fillDialog();
+  if(!dlg.open) dlg.showModal();
+  dlg.querySelector(".dl-scroll").scrollTop=0;
+  try{ history.replaceState(null,"","#"+id); }catch(e){}
+}
+function fillDialog(){
+  const p=cur, list=imgs(p);
+  $("#dCat").textContent = tx(p.type);
+  $("#dTitle").textContent = tx(p.title);
+  $("#dAbout").textContent = tx(p.about);
+  $("#dFeats").innerHTML = p.feats.map(x=>`<li class="${x.star?"star":""}">${lang==="ar"?x.ar:x.en}</li>`).join("");
+  let spec = `<dl><dt>${u("client")}</dt><dd>${tx(p.client)}</dd><dt>${u("type")}</dt><dd>${tx(p.type)}</dd><dt>${u("builtBy")}</dt><dd>${byText(p.by)}</dd><dt>${u("status")}</dt><dd>${pill(p)}</dd></dl>`;
+  if(p.facts) spec += `<div class="facts">${p.facts.map(fc=>`<div class="fact"><b>${fc[0]}</b><span>${tx(fc[1])}</span></div>`).join("")}</div>`;
+  spec += p.link ? `<a class="cta" href="${p.link}" target="_blank" rel="noopener">${u("visit")} <span aria-hidden="true">↗</span></a>` : `<div class="private">${u("privateNote")}</div>`;
+  if(CONTACT.whatsapp) spec += `<a class="ask" href="${waLink(u("waAbout").replace("{p}",tx(p.title)))}" target="_blank" rel="noopener">${ICON.wa}${u(p.link?"askLike":"askDemo")}</a>`;
+  $("#dSpec").innerHTML = spec;
+  const v=$("#viewer"); v.style.setProperty("--tint",p.tint);
+  if(!list.length){ v.innerHTML = art(p.cover.art); $("#thumbs").innerHTML=""; $("#thumbs").hidden=true; startArt(v); return; }
+  $("#thumbs").hidden = list.length<2;
+  $("#thumbs").innerHTML = list.map((m,i)=>`<button type="button" class="${m.h>m.w?"tall":""}" data-i="${i}" aria-label="${i+1}"><img loading="lazy" alt="" src="${m.src}"></button>`).join("");
+  $("#thumbs").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{ idx=+b.dataset.i; showImg(); }));
+  showImg();
+}
+function showImg(){
+  const list=imgs(cur), m=list[idx], v=$("#viewer");
+  v.innerHTML = `<img alt="${tx(cur.title)} ${idx+1}" src="${m.src}" width="${m.w}" height="${m.h}">`
+    + (list.length>1?`<button class="navb prev" type="button" aria-label="Previous"><span>‹</span></button><button class="navb next" type="button" aria-label="Next"><span>›</span></button><span class="count">${idx+1} / ${list.length}</span>`:"");
+  const go=d=>{ idx=(idx+d+list.length)%list.length; showImg(); };
+  v.querySelector(".prev")?.addEventListener("click",()=>go(lang==="ar"?1:-1));
+  v.querySelector(".next")?.addEventListener("click",()=>go(lang==="ar"?-1:1));
+  $("#thumbs").querySelectorAll("button").forEach((b,i)=>b.setAttribute("aria-current", String(i===idx)));
+  $("#thumbs").querySelector(`[data-i="${idx}"]`)?.scrollIntoView({block:"nearest",inline:"nearest"});
+  let x0=null; v.ontouchstart=e=>{x0=e.touches[0].clientX}; v.ontouchend=e=>{ if(x0==null) return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go((dx<0?1:-1)*(lang==="ar"?-1:1)); x0=null; };
+}
+$("#dClose").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
+dlg.addEventListener("close",()=>{ try{ history.replaceState(null,"",location.pathname+location.search); }catch(e){} });
+document.addEventListener("keydown",e=>{
+  if(!dlg.open||!cur||!imgs(cur).length) return;
+  const list=imgs(cur); const dir = lang==="ar"?-1:1;
+  if(e.key==="ArrowRight"){ idx=(idx+dir+list.length)%list.length; showImg(); }
+  if(e.key==="ArrowLeft"){ idx=(idx-dir+list.length)%list.length; showImg(); }
+});
+
+/* art animations */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const timers = new Set();
+function startArt(root){
+  root.querySelectorAll("[data-purple]").forEach(g=>{
+    const cells=[...g.children]; const tick=()=>{ cells.forEach(c=>c.className=""); const pick=()=>cells[Math.floor(Math.random()*9)]; pick().className="on"; pick().className="on"; if(Math.random()<.55){ const pc=pick(); if(!pc.className) pc.className="pu"; } };
+    tick(); if(!reduce) timers.add(setInterval(tick,700));
+  });
+  root.querySelectorAll("[data-swipe]").forEach(s=>{
+    let cards=[...s.children]; let right=true;
+    const layout=()=>{ cards.forEach((c,i)=>{ c.classList.remove("b1","b2","go-r","go-l"); c.style.zIndex=cards.length-i; if(i===1)c.classList.add("b1"); if(i>=2)c.classList.add("b2"); }); };
+    layout();
+    if(!reduce) timers.add(setInterval(()=>{ const top=cards[0]; top.classList.add(right?"go-r":"go-l"); right=!right; setTimeout(()=>{ cards.push(cards.shift()); layout(); },600); },1900));
+  });
+  root.querySelectorAll("[data-fx]").forEach(box=>{
+    let v=141.5, hist=Array.from({length:24},(_,i)=>141.5+Math.sin(i/3)*.25);
+    const val=box.querySelector(".val"), chg=box.querySelector(".chg"), pl=box.querySelector("polyline");
+    const draw=()=>{ const mn=Math.min(...hist), mx=Math.max(...hist), r=(mx-mn)||1; pl.setAttribute("points", hist.map((h,i)=>`${(i/(hist.length-1)*200).toFixed(1)},${(42-(h-mn)/r*38).toFixed(1)}`).join(" ")); };
+    const tick=()=>{ const d=(Math.random()-.48)*.18; v=Math.max(139,Math.min(144,v+d)); hist.push(v); hist.shift(); val.textContent=v.toFixed(2); const pc=((v-hist[0])/hist[0]*100); chg.textContent=(pc>=0?"+":"")+pc.toFixed(2)+"%"; chg.className="chg "+(pc>=0?"up":"dn"); draw(); };
+    draw(); tick(); if(!reduce) timers.add(setInterval(tick,1600));
+  });
+}
+
+/* language */
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{
+  lang=b.dataset.lang; try{ localStorage.setItem("za-lang",lang); }catch(e){}
+  timers.forEach(t=>clearInterval(t)); timers.clear();
+  renderUI(); renderFilters(); renderGrid(); if(dlg.open) fillDialog();
+}));
+addEventListener("scroll",()=>$("#top").classList.toggle("scrolled",scrollY>8),{passive:true});
+
+renderUI(); renderFilters(); renderGrid();
+const h=(location.hash||"").slice(1); if(h && P.some(p=>p.id===h)) openProject(h);
+</script>
+
+</body>
+</html>

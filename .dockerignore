@@ -1,0 +1,9 @@
+.git
+.gitignore
+.dockerignore
+README.txt
+COOLIFY.md
+deploy/without-coolify
+deploy/*.sh
+**/.DS_Store
+**/Thumbs.db
